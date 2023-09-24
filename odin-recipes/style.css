@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Playfair+Display:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Playfair Display', serif;    
+}
+
+body {
+    width: 25%;
+    margin: auto;
+    background-color: #F8F9FA;
+}
+
+h1 {
+    padding: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.recipe-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-links {
+    list-style: none;
+}
+
+.recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.5rem;
+    border-radius: 0.75rem;
+    border: solid 2px #222222;
+    background-color: #FFF;
+    padding: 1rem 3rem;
+    letter-spacing: 1px;
+}
+
+.recipe img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.description,
+.ingredients,
+.steps {
+    padding: 1rem;
+}
