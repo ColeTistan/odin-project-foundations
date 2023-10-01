@@ -7,10 +7,27 @@
     font-family: 'Ubuntu Mono', monospace;
 }
 
-p {
+div {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
     font-size: 1.5rem;
+    line-height: 4rem;
+}
+
+button {
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border: solid 2px #e97210;
+    background-color: transparent;
+    border-radius: 3rem;
+    font-size: 1.25rem;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #e97210;
+    color: #ffffff;
 }
