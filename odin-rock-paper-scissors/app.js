@@ -70,4 +70,4 @@ const game = function () {
     }
 }
 
-// startBtn.addEventListener("click", game());
+startBtn.addEventListener("click", game());
