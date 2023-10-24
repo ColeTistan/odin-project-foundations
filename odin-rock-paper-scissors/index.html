@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <div>
-        <p>
-            To see gameplay in action, check the browser console 
-            by pressing ctrl shift i or go to more tools to find developer tools.
-        </p>
-        <button>Start Game!</button>
+    <div class="container">
+        <h1>Rock, Paper, Scissors</h1>
+        <div id="scoreboard">
+            <div class="game-results">
+                <p>It's a tie!</p>
+                <p>Rock ties with Rock</p>
+            </div>
+            <div class="scores">
+                <div class="player-score">
+                    <span>&#x270A;</span>
+                    <p>Player: </p>
+                </div>
+                <div class="opponent-score">
+                    <span>&#x270A;</span>
+                    <p>Opponent: </p>
+                </div>
+            </div>
+        </div>
+        <div id="game-choices">
+            <div class="choice">
+                <button>
+                    <span>&#x270A;</span>
+                </button>
+            </div>
+            <div class="choice">
+                <button>
+                    <span>&#x270B;</span>
+                </button>
+            </div>
+            <div class="choice">
+                <button>
+                    <span>✌️</span>
+                </button>
+            </div>
+        </div>
     </div>
     <script src="./app.js"></script>
 </body>
