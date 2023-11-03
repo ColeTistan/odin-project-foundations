@@ -10,34 +10,33 @@
     <div class="container">
         <h1>Rock, Paper, Scissors</h1>
         <div id="scoreboard">
-            <div class="game-results">
-                <p>It's a tie!</p>
-                <p>Rock ties with Rock</p>
+            <div class="game-results" id="game-results">
+                <p></p>
             </div>
             <div class="scores">
                 <div class="player-score">
-                    <span>&#x270A;</span>
-                    <p>Player: </p>
+                    <p>Player</p>
+                    <p id="player-current-score">0</p>
                 </div>
                 <div class="opponent-score">
-                    <span>&#x270A;</span>
-                    <p>Opponent: </p>
+                    <p>Computer</p>
+                    <p id="computer-current-score">0</p>
                 </div>
             </div>
         </div>
         <div id="game-choices">
             <div class="choice">
-                <button>
+                <button value="rock">
                     <span>&#x270A;</span>
                 </button>
             </div>
             <div class="choice">
-                <button>
+                <button value="paper">
                     <span>&#x270B;</span>
                 </button>
             </div>
             <div class="choice">
-                <button>
+                <button value="scissors">
                     <span>✌️</span>
                 </button>
             </div>
