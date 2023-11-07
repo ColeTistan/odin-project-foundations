@@ -12,14 +12,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--white);
 }
 
 h2 {
-    color: var(--white);
     padding: 1rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 button {
@@ -30,7 +35,6 @@ button {
     background: var(--primary-color);
     font-weight: 600;
     letter-spacing: 1px;
-    color: var(--white);
     transition: 0.2s all ease-in;
     letter-spacing: 1px;
 }

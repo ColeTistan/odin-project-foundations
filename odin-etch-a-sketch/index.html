@@ -20,8 +20,8 @@
             <button onclick="updateColor('random')" id="random-btn">
                 Random
             </button>
-            <button onclick="updateColor('reset')" id="reset-btn">
-                Reset
+            <button onclick="clearCanvas()" id="reset-btn">
+                Clear
             </button>
             <button id="small-grid-btn">
                 16x16
@@ -32,6 +32,8 @@
             <button id="large-grid-btn">
                 64x64
             </button>
+            <input type="range" name="grid-range" id="grid-range" max="64" min="8" defaultValue="16">
+            <label name="grid-size" for="grid">16</label>
         </div>
     </div>
     <script src="./app.js"></script>

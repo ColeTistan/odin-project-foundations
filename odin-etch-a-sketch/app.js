@@ -2,7 +2,7 @@
 const btns = document.getElementsByTagName('button');
 const eraserBtn = btns[0];
 const randomBtn = btns[1];
-const resetBtn = btns[2];
+const clearBtn = btns[2];
 const smallGridBtn = btns[3];
 const mediumGridBtn = btns[4];
 const largeGridBtn = btns[5];
@@ -37,9 +37,6 @@ const createSquares = function(size) {
                 case 'eraser':
                     squareDiv.style.background = 'var(--white)';
                     break;
-                // case 'reset':
-                //     squareDiv.style.background = 'var(--white)';
-                //     break;
                 case 'random':
                     squareDiv.style.background = `hsl(${Math.floor(Math.random() * 255)}, 100%, 50%)`;
                     break;
@@ -54,9 +51,17 @@ const createSquares = function(size) {
     }
 }
 
+const clearCanvas = function() {
+    let canvas = document.querySelector('.canvas');
+    let squareDivs = canvas.querySelectorAll('div');
+    squareDivs.forEach(function(div) {
+        div.style.background = 'var(--white)';
+    })
+    currentColor = '#222222';
+}
+
 const updateColor = function(colorSelected) {
     currentColor = colorSelected;
-    console.log(currentColor)
 }
 
 smallGridBtn.addEventListener('click', function() {
@@ -68,8 +73,10 @@ mediumGridBtn.addEventListener('click', function() {
 });
 
 largeGridBtn.addEventListener('click', function() {
-    createSquares(64);
+    createSquares(64)
 });
+
+clearBtn.addEventListener('click', clearCanvas());
 
 const main = function() {
     createSquares(16);
