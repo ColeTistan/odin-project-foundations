@@ -7,7 +7,12 @@ const smallGridBtn = btns[3];
 const mediumGridBtn = btns[4];
 const largeGridBtn = btns[5];
 
-console.log(btns);
+let currentColor = '#222222';
+
+const draw = function(squareDiv) {
+    console.log(currentColor);
+    squareDiv.style.background = currentColor;
+}
 
 // Generates squares and inserts into canvas
 const createSquares = function(size) {
@@ -26,34 +31,48 @@ const createSquares = function(size) {
     // populate grid with given size
     for (let i = 0; i < gridSize; i++) {
         let squareDiv = document.createElement('div');
-        squareDiv.classList.add('square');
+        currentColor = '#222222';
+        squareDiv.addEventListener('mouseover', function() {
+            switch (currentColor) {
+                case 'eraser':
+                    squareDiv.style.background = 'var(--white)';
+                    break;
+                // case 'reset':
+                //     squareDiv.style.background = 'var(--white)';
+                //     break;
+                case 'random':
+                    squareDiv.style.background = `hsl(${Math.floor(Math.random() * 255)}, 100%, 50%)`;
+                    break;
+                default:
+                    squareDiv.style.background = '#222222';
+                    break;
+            }
+        });
+        squareDiv.style.border = 'solid 1px #d3d3d3';
+        squareDiv.style.background = '#ffffff';
         canvas.insertAdjacentElement('beforeend', squareDiv);
     }
 }
 
-// Enable draw mode to allow user to fill squares
-const draw = function() {
-    let canvas = document.querySelector('.canvas');
-    let squareDivs = canvas.querySelectorAll('div');
-    squareDivs.forEach(function(div) {
-        div.addEventListener('mouseover', function() {
-            div.style.background = 'var(--dark-color)';
-        });
-    });
+const updateColor = function(colorSelected) {
+    currentColor = colorSelected;
+    console.log(currentColor)
 }
-
-createSquares(16);
-draw();
 
 smallGridBtn.addEventListener('click', function() {
     createSquares(16);
-    draw();
 });
+
 mediumGridBtn.addEventListener('click', function() {
     createSquares(32);
-    draw();
 });
+
 largeGridBtn.addEventListener('click', function() {
     createSquares(64);
-    draw();
 });
+
+const main = function() {
+    createSquares(16);
+}
+
+main();

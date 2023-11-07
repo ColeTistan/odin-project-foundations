@@ -55,11 +55,6 @@ button:hover {
     height: 750px;
 }
 
-.square {
-    border: solid 0.1px #d3d3d3;
-    background: #ffffff;
-}
-
 .button-group {
     display: flex;
     justify-content: center;
