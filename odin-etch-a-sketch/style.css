@@ -4,7 +4,8 @@
     --secondary-color: #EE9322;
     --ternary-color: #D83F31;
     --eraser-color: #f56bd1;
-    --white: #ffffff;
+    --light: #f7f7f7;
+    --black: #222222;
 }
 
 * {
@@ -12,28 +13,44 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--white);
+    color: var(--light);
 }
 
 h2 {
-    padding: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 3rem;
+    color: var(--black);
 }
 
-label {
-    font-size: 18px;
-    font-weight: 600;
+input {
+    color: var(--black);
+    font-size: 24px;
+    padding: 0.6rem;
+    outline: none;
+    border: solid 2px var(--black);
+    border-radius: 24px;
+    width: 75px;
+    text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 button {
     cursor: pointer;
-    padding: 0.75rem;
+    padding: 1rem;
     border: none;
     border-radius: 60px;
     background: var(--primary-color);
     font-weight: 600;
+    font-size: 16px;
     letter-spacing: 1px;
     transition: 0.2s all ease-in;
     letter-spacing: 1px;
@@ -50,21 +67,25 @@ button:hover {
     flex-direction: column;
     min-height: 100vh;
     margin: auto;
-    background: var(--dark-color);
 }
 
 .canvas {
     display: grid;
-    width: 750px;
-    height: 750px;
+    width: 650px;
+    height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     gap: 1rem;
+}
+
+.button-group > button:nth-child(3) {
+    margin-right: 10%;
 }
 
 #eraser-btn {
