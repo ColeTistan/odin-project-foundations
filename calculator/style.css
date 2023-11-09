@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
+:root {
+    --black: #000000;
+    --ternary: #8FB9FE;
+    --secondary: #14213d;
+    --primary: #fca311;
+    --light: #e5e5e5;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +16,17 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+    background: var(--white);
+}
+
 button {
-    height: 2rem;
-    width: 2rem;
+    padding: 1.75rem;
+    border: solid 2px var(--black);
+    background: var(--light);
+    color: var(--black);
+    /* font-weight: 100; */
+    font-size: 1.5rem;
 }
 
 .container {
@@ -18,4 +35,23 @@ button {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.calculator-btn-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    width: 25%;
+}
+
+.operation {
+    background: var(--primary);
+}
+
+.secondary-operation {
+    background: var(--ternary);
+}
+
+#auto-clear {
+    grid-column: span 2;
 }
