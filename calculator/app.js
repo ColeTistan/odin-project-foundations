@@ -1,3 +1,21 @@
+const buttons = document.querySelectorAll('button');
+const displayScreen = document.querySelector('.display-screen');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        displayScreen.innerText = button.innerText;
+    });
+});
+
+const clearDisplay = () => {
+    let autoClearBtn = document.getElementById('auto-clear');
+    autoClearBtn.addEventListener('click', () => {
+        displayScreen.innerText = 0;
+    });
+}
+
+
+
 const add = function(firstNum, secondNum) {
     return firstNum + secondNum;
 }
