@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
-    --black: #000000;
-    --ternary: #8FB9FE;
-    --secondary: #14213d;
-    --primary: #fca311;
+    --black: #211A1E;
+    --ternary: #9BC53D;
+    --secondary: #c3423f;
+    --primary: #faba0a;
     --light: #e5e5e5;
     --white: #ffffff;
 }
@@ -52,16 +52,24 @@ button {
 
 
 #auto-clear {
-    grid-column: 1/3;
+    grid-column: span 2;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+#zero {
+    grid-column: span 2;
+}
+
+#equal {
+    background: var(--ternary);
+    grid-column: span 2;
 }
 
 .operation {
     background: var(--primary);
 }
 
-.secondary-operation {
-    background: var(--ternary);
-}
 
 /* .calculator-btn-row {
     display: grid;

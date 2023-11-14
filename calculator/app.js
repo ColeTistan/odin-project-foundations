@@ -1,20 +1,9 @@
+let calcValueList = [];
+let firstNum = 0;
+let secondNum = 0;
+
 const buttons = document.querySelectorAll('button');
 const displayScreen = document.querySelector('.display-screen');
-
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        displayScreen.innerText = button.innerText;
-    });
-});
-
-const clearDisplay = () => {
-    let autoClearBtn = document.getElementById('auto-clear');
-    autoClearBtn.addEventListener('click', () => {
-        displayScreen.innerText = 0;
-    });
-}
-
-
 
 const add = function(firstNum, secondNum) {
     return firstNum + secondNum;
@@ -29,10 +18,12 @@ const multiply = function(firstNum, secondNum) {
 }
 
 const divide = function(firstNum, secondNum) {
-    return firstNum / secondNum;
+    let result = firstNum / secondNum;
+    return result == 'Infinity' ? 'Undefined' : firstNum / secondNum;
 }
 
-const operator = function(operator, firstNum, secondNum) {
+// return function call based on operator used
+const operate = function(operator, firstNum, secondNum) {
     switch(operator) {
         case '+':
             return add(firstNum, secondNum);
@@ -47,7 +38,45 @@ const operator = function(operator, firstNum, secondNum) {
     }
 }
 
-console.log(operator('+',2,2));
-console.log(operator('-',2,2));
-console.log(operator('*',2,2));
-console.log(operator('/',2,2));
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        displayResult = '';
+        calcValueList.push(button.textContent);
+        console.log(calcValueList);
+        displayResult = calcValueList.join('');
+        displayScreen.textContent = displayResult;
+        if (calcValueList.includes('=')) {
+            displayResult = displayResult.slice(0, -1);
+            console.log(displayResult);
+            if (displayResult.includes('÷')) {
+                let nums = displayResult.split('÷');
+                firstNum = parseFloat(nums[0]);
+                secondNum = parseFloat(nums[1]);
+                console.log(divide(firstNum, secondNum));
+            } else if (displayResult.includes('×')) {
+                let nums = displayResult.split('×');
+                firstNum = parseFloat(nums[0]);
+                secondNum = parseFloat(nums[1]);
+                console.log(multiply(firstNum, secondNum));
+            } else if (displayResult.includes('+')) {
+                let nums = displayResult.split('+');
+                firstNum = parseFloat(nums[0]);
+                secondNum = parseFloat(nums[1]);
+                console.log(add(firstNum, secondNum));
+            } else if (displayResult.includes('−')) {
+                let nums = displayResult.split('−');
+                firstNum = parseFloat(nums[0]);
+                secondNum = parseFloat(nums[1]);
+                console.log(subtract(firstNum, secondNum));
+            } else {
+                console.log('invalid operator');
+            }
+        }
+    });
+});
+
+console.log(operate('+',2,2));
+console.log(operate('-',2,2));
+console.log(operate('*',2,2));
+console.log(operate('/',2,2));
+console.log(operate('/',2,0))
