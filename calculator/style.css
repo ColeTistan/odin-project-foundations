@@ -92,7 +92,7 @@ button:hover {
     grid-column: span 2;
 }
 
-#equal {
+#equals {
     border-radius: 5rem;
     grid-column: span 2;
     transition: 0.2 ease-in-out;
