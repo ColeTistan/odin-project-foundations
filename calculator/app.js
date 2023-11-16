@@ -128,6 +128,7 @@ const calculate = function(button) {
     }
 }
 
+// disables button if clicked
 const disableButton = function(button) {
     if(!button.disabled && calcValues.length > 0) {
         button.disabled = true;
