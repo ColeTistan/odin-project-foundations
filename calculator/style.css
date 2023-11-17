@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --black: #211A1E;
+    --dark-gray: #383738;
+    --quaternary: #390099;
+    --tertiary: #FF5400;
+    --secondary: #9E0059;
+    --primary: #FFBD00;
+    --light: #e5e5e5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+button {
+    background: var(--white);
+    font-size: 2.25rem;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    color: var(--white);
+    background: var(--quaternary);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 80px;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    width: 25rem;
+    background: var(--light);
+    padding: 1.25rem;
+    border-radius: 10px;
+}
+
+.display-screen {
+    background: var(--black);
+    color: var(--white);
+    border-radius: 0.75rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    font-size: 2.25rem;
+    grid-column: 1/5;
+}
+
+.display-screen p:first-child {
+    font-size: 1rem;
+    color: var(--light);
+    filter: brightness(80%);
+}
+
+
+#auto-clear {
+    color: var(--secondary);
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+}
+
+#auto-clear:hover {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+#zero {
+    border-radius: 5rem;
+    grid-column: span 2;
+}
+
+#equals {
+    border-radius: 5rem;
+    grid-column: span 2;
+    transition: 0.2 ease-in-out;
+}
+
+#equal:hover {
+    background: var(--tertiary);
+}
+
+.operation {
+    transition: 0.2s ease-in-out;
+}
+
+.operation:hover {
+    background: var(--primary);
+    color: var(--white);
+}
