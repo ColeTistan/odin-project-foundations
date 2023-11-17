@@ -3,7 +3,8 @@ const btns = document.getElementsByTagName('button');
 const eraserBtn = btns[0];
 const randomBtn = btns[1];
 const clearBtn = btns[2];
-const submitBtn = btns[3];
+
+const gridInput = document.getElementById('grid-input');
 
 let currentColor = 'var(--black)';
 
@@ -25,7 +26,6 @@ const updateColor = function(colorSelected) {
 
 // retrieves user input to generate some number of grids on canvas
 const getUserInput = function() {
-    let gridInput = document.getElementById('grid-input');
     if (gridInput.value < 0 || gridInput.value > 100) {
         alert("Number entered is smaller than 0 or greater than 100. Please enter a different number.");
         gridInput.value = 16;
@@ -56,6 +56,9 @@ const createSquares = function() {
         currentColor = 'var(--black)';
         squareDiv.addEventListener('mouseover', function() {
             switch (currentColor) {
+                case 'draw':
+                    squareDiv.style.background = 'var(--black)';
+                    break;
                 case 'eraser':
                     squareDiv.style.background = 'var(--light)';
                     break;
@@ -75,8 +78,12 @@ const createSquares = function() {
 
 // button events to trigger UI functionality
 
-submitBtn.addEventListener('click', function() {
-    createSquares();
+gridInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        getUserInput();
+        createSquares();
+    }
 });
 
 clearBtn.addEventListener('click', clearCanvas());
