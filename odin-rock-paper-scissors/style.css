@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Color Emoji", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: #fbbf77;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  font-size: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  padding: 0 1.5rem;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 50%;
+}
+
+#game-choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scoreboard {
+  margin-bottom: 15px;
+}
+
+.game-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.player-score,
+.opponent-score {
+  padding: 0 1.5rem;
+  font-size: 1.75rem;
+}
+
+.winner {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 24px;
+}
